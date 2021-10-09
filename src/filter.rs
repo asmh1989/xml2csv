@@ -15,6 +15,7 @@ pub struct Filter {
     pub smiles: String,
     pub inchi: String,
     pub inchi_key: String,
+    pub weight: f64,
     pub groups: Vec<String>,
     pub experimental_properties: Vec<Property>,
 }
@@ -27,6 +28,7 @@ impl Filter {
         inchi: String,
         experimental_properties: Vec<Property>,
         inchi_key: String,
+        weight: f64,
         groups: Vec<String>,
     ) -> Self {
         Self {
@@ -38,6 +40,7 @@ impl Filter {
             inchi_key,
             drugbank_id,
             groups,
+            weight,
         }
     }
 
@@ -169,6 +172,12 @@ fn get_drug(f: &str) {
                     groups.push(g.to_string());
                 }
 
+                let mut weight = 0.;
+
+                if let Some(g) = v.average_mass {
+                    weight = g;
+                }
+
                 let drug = Filter::new(
                     v.type_field,
                     smiles,
@@ -176,6 +185,7 @@ fn get_drug(f: &str) {
                     inchi,
                     experimental_properties,
                     inchi_key,
+                    weight,
                     groups,
                 );
                 let _ = drug.save_db();

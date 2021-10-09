@@ -16,8 +16,8 @@ pub struct Drugbank {
     // pub ahfs_codes: AhfsCodes,
     // #[serde(rename = "atc-codes")]
     // pub atc_codes: AtcCodes,
-    // #[serde(rename = "average-mass")]
-    // pub average_mass: f64,
+    #[serde(rename = "average-mass")]
+    pub average_mass: Option<f64>,
     #[serde(rename = "calculated-properties")]
     pub calculated_properties: Option<Properties>,
     // pub carriers: Carriers,
