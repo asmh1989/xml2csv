@@ -11,6 +11,7 @@ mod model;
 mod shell;
 
 fn main() {
+    xml2json();
     println!("Hello, world!");
 }
 

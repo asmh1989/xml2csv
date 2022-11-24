@@ -216,7 +216,7 @@ mod tests {
     #[test]
     fn test_name() {
         crate::config::init_config();
-        crate::db::init_db("mongodb://192.168.2.25:27017");
+        crate::db::init_db("mongodb://root:Sz123456@192.168.2.26:27017");
 
         start_filter("data/json");
     }
