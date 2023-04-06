@@ -7,6 +7,7 @@ use quickxml_to_serde::{xml_string_to_json, Config};
 mod config;
 mod db;
 mod filter;
+mod filter_target;
 mod model;
 mod shell;
 

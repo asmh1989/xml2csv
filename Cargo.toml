@@ -17,7 +17,8 @@ rayon = "1.5.1"
 
 jwalk = "0.6"
 uuid = {version = "0.8", features = ["serde", "v4"]}
-
+csv = "1.2"
+serde_with = "2.3.2"
 
 # for db
 chrono = "0.4.19"
